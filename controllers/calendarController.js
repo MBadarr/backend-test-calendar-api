@@ -9,7 +9,6 @@ const getHolidays = async (req, res) => {
         }
 
         const holidays = await calendarificService.getHolidays(country, year);
-        console.log('holidays', holidays)
         res.json(holidays);
 
     } catch (error) {
