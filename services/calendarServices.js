@@ -16,12 +16,11 @@ const getHolidays = async (country, year) => {
         params: {
             api_key: config.calendarificApiKey,
             country,
-            year,
-        },
+            year
+        }
     });
 
     const holidays = response.data.response.holidays;
-    console.log(`Holidays ${holidays.length} holidays`);
     cache.set(cacheKey, holidays);
 
     return holidays;
